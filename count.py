@@ -13,6 +13,6 @@ def sum(numArr):
     print(count)
     return count
 
-sum(salary);
+sum(salary)
 # print(count)    
 
