@@ -1,12 +1,13 @@
 from player import Player  
 
 witcher = Player({
-    "name": "Genard",
+    "name": "Gerald",
     "health": 110,
     "attack": 60,
     "speed": 15,
     "msg" : "",
-    "isEvil": False
+    "isEvil": False,
+    "award": {}
 })
 # hero
 roland = Player({
@@ -15,7 +16,8 @@ roland = Player({
     "attack": 50,
     "speed": 20,
     "isEvil": False,
-    "msg" : ""
+    "msg" : "",
+    "award": {}
 })
 # hero
 tor = Player({
@@ -24,7 +26,8 @@ tor = Player({
     "attack": 70,
     "speed": 5,
     "isEvil": False,
-    "msg" : ""
+    "msg" : "",
+    "award": {}
 })
 # enemy
 troll = Player({
@@ -33,7 +36,8 @@ troll = Player({
     "attack": 40,
     "speed": 20,
     "isEvil": True,
-    "msg" : "You will not get what you want until you passe me"
+    "msg" : "You will not get what you want until you passe me",
+    "award": {}
 })
 # enemy
 monster = Player({
@@ -42,7 +46,8 @@ monster = Player({
     "attack": 40,
     "speed": 20,
     "isEvil": True,
-    "msg": "Oh how do we have here! let's fight!"
+    "msg": "Oh how do we have here! let's fight!",
+    "award": {}
 })
 # enemy
 org = Player({
@@ -51,7 +56,8 @@ org = Player({
     "attack": 60,
     "speed": 20,
     "isEvil": True,
-    "msg": "I see a real warrior end i will kill him!"
+    "msg": "I see a real warrior end i will kill him!",
+    "award": {}
 })
 # friend
 elf = Player({

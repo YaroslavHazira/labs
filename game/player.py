@@ -6,15 +6,6 @@ class Player:
     msg = None
     isEvil = None
 
-    # options = {
-    # "name": "Genard",
-    # "health": 110,
-    # "attack": 60,
-    # "speed": 15,
-    # "msg" : "",
-    # "isEvil": False
-    # }
-
     def __init__(self, options):
         self.name = options["name"]
         self.attack = options["attack"]
@@ -22,22 +13,23 @@ class Player:
         self.health =  options["health"]
         self.msg =  options["msg"]
         self.isEvil = options["isEvil"]
-
+        self.award = options["award"]
         pass
 
     def get_power(self):
         return self.attack * self.speed
-        #  player["attack"] * player["speed"]
-
-    def __get_data(self):
-        print("get_data", self.name, self.attack, self.speed, self.health, self.msg, self.isEvil)
-
 
     def get_msg(self):
         print(self.name + ": " + self.msg)
 
+    # friend
+    def get_award(self):
+        return self.award
+
+    def set_award(self, award):
+        key = award["key"]
+        amount = award["amount"]
+        updatedAmount = getattr(self, key) + amount
     
-# {} - object     =>   cat = { "name": "Bob" }    =>    cat["name"]
-# [] - array      =>   cats = ["Bob", "Tom"]      =>    cats[1]
-# () - function   =>   def get_power():           =>    get_power()  exemple   print("string")
-# "" - sting
+        setattr(self, key, updatedAmount)
+

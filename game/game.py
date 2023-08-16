@@ -15,8 +15,7 @@ def round(player, participant):
         print("Meet your enemy in the magic forest " + participant.name)
         participant.get_msg()
         player.get_msg()
-        player.__get_data()
-
+        
         print("fight : " + player.name + " VS " + participant.name)
         playerPower = player.get_power()
         participantPower = participant.get_power()
@@ -28,17 +27,22 @@ def round(player, participant):
         print('winner: ' + winner.name) 
     else:
         # friend
-    
+        print("Meet your friend in the magic forest " + participant.name)
+        participant.get_msg()
+        award = participant.get_award()
+        player.set_award(award)
         winner = player
+        print("Your award: ", award["key"] , " + ", award["amount"])
+        print('winner: ' + winner.name)
 
     print("------------")
     return winner
 
 def game():
     count = 0
-
+ 
     for hero in heroList:
-        count = count +1
+        count = count + 1
         print(count, hero.name)
         
     heroIndex = int(input("With wich hero do you want to play:" )) - 1
@@ -49,13 +53,29 @@ def game():
     enemy2 = getPerson(list)
     enemy3 = getPerson(list)
 
-    winner = round(hero, enemy1)
+
+    try:
+        print("round 1")
+        winner = round(hero, enemy1)
+        checkWiner(winner, hero)
+
+        print("round 2")
+        winner = round(winner, enemy2)
+        checkWiner(winner, hero)
+
+        print("round 3")
+        winner = round(winner, enemy3)
+        checkWiner(winner, hero)
+        
+        print("Final winner: " + winner.name )
+    except:
+        print("Game over!!!")
+
+
+def checkWiner(winner, hero):
+    if winner != hero:
+        raise Exception("Game Over!!!")
+            
     
-    winner = round(winner, enemy2)
-    winner = round(winner, enemy3)
-
-    print("Final winner: " + winner.name )
-
-
 game()
 
