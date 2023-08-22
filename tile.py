@@ -1,7 +1,7 @@
-def count_tiles(count, wieght, lenghts, rou, space):
-    a = (lenghts + space) * rou + 1
+def count_tiles(colum, row, wieght, lenghts, space):
+    a = (lenghts + space) * row + space
     print(a)
-    b = (wieght + 1) * count + 1
+    b = (wieght + space) * colum + space
     print(b)
     result = a * b
 
@@ -14,5 +14,5 @@ def test(expect, testResult):
     else: 
         print("Test fail: ", expect, testResult )
 
-test(37638 , count_tiles(2, 60, 60, 5, 1))
-# test(2150 , count_tiles(2, 50, 1000))
+
+test(37638 , count_tiles(2, 5, 60, 60, 1))
